@@ -21,19 +21,7 @@ public class userServiceApplication{
         SpringApplication.run(userServiceApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner start(UserRepository userRepository){
-        return args -> {
-//            for (int i = 1; i <= 10; i++) {
-//            User user = new User("user" + i, "user" + i + "@mail.com");
-//            userRepository.save(user);
-//        }
-//            User user = new User(1L, "user" + 1, "user" + 1 + "@mail.com");
-//            userRepository.save(user);
-        userRepository.findAll().forEach(c->{
-                System.out.println(c.toString());
-            });
-        };
+
     }
 //    @Override
 //    public void run(String... args) throws Exception {
@@ -48,5 +36,5 @@ public class userServiceApplication{
 //            });
 //
 //        };
-    }
+
 

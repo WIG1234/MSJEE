@@ -3,14 +3,13 @@ package com.example.userService.web;
 import com.example.userService.entities.User;
 import com.example.userService.repositories.UserRepository;
 import com.example.userService.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * @author abdellah
- **/
+
 @RestController
 @RequestMapping("/api/users")
 public class UserRestController {

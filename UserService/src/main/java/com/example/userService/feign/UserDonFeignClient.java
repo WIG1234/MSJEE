@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-/**
- * @author abdellah
- **/
+
 @FeignClient(name = "DonService", path = "/api/dons")
 public interface UserDonFeignClient {
     @GetMapping("/user-dons/{userId}")

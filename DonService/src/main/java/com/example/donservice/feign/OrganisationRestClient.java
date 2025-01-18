@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-/**
- * @author abdellah
- **/
+
 @FeignClient(name = "OrganisationService" ,path = "/api/organisations")
 public interface OrganisationRestClient {
     Logger logger = LoggerFactory.getLogger(OrganisationRestClient.class);

@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-/**
- * @author abdellah
- **/
+
 @RestController
 @RefreshScope
 public class ConfigTestController {

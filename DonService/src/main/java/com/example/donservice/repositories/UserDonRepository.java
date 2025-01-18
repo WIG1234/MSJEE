@@ -7,9 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @author abdellah
- **/
+
 @Repository
 public interface UserDonRepository extends JpaRepository<UserDon, Long> {
 

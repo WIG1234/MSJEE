@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 
-/**
- * @author abdellah
- **/
+
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

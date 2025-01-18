@@ -9,9 +9,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
-/**
- * @author abdellah
- **/
+
 @Entity
 @Setter
 @Getter

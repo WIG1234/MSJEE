@@ -10,9 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-/**
- * @author abdellah
- **/
+
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
 public class Payment {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

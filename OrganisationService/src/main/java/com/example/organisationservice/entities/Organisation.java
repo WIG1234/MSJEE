@@ -6,7 +6,10 @@ import lombok.*;
 
 import java.util.List;
 
-@Entity @Data @AllArgsConstructor @NoArgsConstructor
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Organisation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

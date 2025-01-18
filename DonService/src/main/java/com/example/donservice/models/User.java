@@ -8,9 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-/**
- * @author abdellah
- **/
+
 @Data
 public class User {
     private Long Id;

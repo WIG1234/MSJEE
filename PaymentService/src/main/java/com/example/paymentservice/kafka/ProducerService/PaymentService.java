@@ -14,9 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
-/**
- * @author abdellah
- **/
+
 @Service
 @RequiredArgsConstructor
 public class PaymentService {
