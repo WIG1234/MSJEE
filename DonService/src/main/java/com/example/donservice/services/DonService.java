@@ -103,18 +103,15 @@ public class DonService {
 
     public void handleDonation(Long donationId, Long userId, double amount) {
         Don don = donRepository.findById(donationId)
-                .orElseThrow(() -> new RuntimeException("Don not found with id: " + donationId));
-
-        // Simulate user donation and update don
+                .orElseThrow(() -> new RuntimeException("nodda: " + donationId));
         UserDon userDon = new UserDon();
         userDon.setDon(don);
         userDon.setUserId(userId);
-        userDon.setAmount(amount); // Example: full payment
+        userDon.setAmount(amount);
         userDon.setLocalDate(LocalDate.now());
 
         userDonRepository.save(userDon);
 
-        // Update Don's current amount and achievement status
         don.updateCurrentAmount(userDon.getAmount());
         donRepository.save(don);
     }

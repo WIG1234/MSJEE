@@ -25,6 +25,7 @@ public class UserRestController {
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers (){
         List<User> userList = userService.getAllUsers();
+        System.out.println(userList);
         return ResponseEntity.ok(userList);
     }
 

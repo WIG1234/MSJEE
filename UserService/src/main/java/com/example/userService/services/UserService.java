@@ -23,11 +23,10 @@ public class UserService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        // Fetch the UserDonDTO data via Feign
         List<UserDonDTO> userDonDTOS = userDonFeignClient.getUserDonsByUserId(userId);
 
-        // Set the donations in the user object
         user.setUserDonDTOS(userDonDTOS);
+        System.out.println("Done");
         return user;
     }
 
@@ -36,16 +35,21 @@ public class UserService {
         usersList.forEach(user -> {
             user.setUserDonDTOS(userDonFeignClient.getUserDonsByUserId(user.getId()));
         });
+        System.out.println(usersList);
+
         return usersList;
     }
     public User getUserById(Long id){
         User user = userRepository.findById(id).get();
         user.setUserDonDTOS(userDonFeignClient.getUserDonsByUserId(user.getId()));
+        System.out.println(user);
+
         return user;
     }
 
     public User createUser(User user) {
         userRepository.save(user);
+        System.out.println("Done");
         return user;
     }
 

@@ -20,9 +20,7 @@ import java.util.stream.Collectors;
 
 import static com.example.donservice.feign.OrganisationRestClient.logger;
 
-/**
- * @author
- */
+
 @RestController
 @RequestMapping("/api/dons")
 public class DonRestController {

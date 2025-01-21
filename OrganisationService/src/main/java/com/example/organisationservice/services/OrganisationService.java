@@ -12,9 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * @author abdellah
- **/
+
 @Service
 public class OrganisationService {
     @Autowired

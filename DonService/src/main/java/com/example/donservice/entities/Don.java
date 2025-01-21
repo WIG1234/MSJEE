@@ -27,7 +27,6 @@ public class Don {
     private double montantToAchieve;
     private double currentAmount = 0.0;
     private boolean isAchieved = false;
-    @JsonIgnore
     @OneToMany(mappedBy = "don", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<UserDon> userDons = new ArrayList<>();
     @Transient

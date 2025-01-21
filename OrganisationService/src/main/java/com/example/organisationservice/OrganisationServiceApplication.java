@@ -18,39 +18,32 @@ public class OrganisationServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(OrganisationServiceApplication.class, args);
     }
+
     @Bean
-    CommandLineRunner start(OrganisationRepository organisationRepository) {
+    CommandLineRunner initData(OrganisationRepository organisationRepository) {
         return args -> {
+            // Initialize Organisation
+            Organisation organisation = new Organisation();
+            organisation.setName("Example Organisation");
+            organisation.setDescription("This is a sample organisation.");
+            organisation.setContactEmail("contact@example.org");
+            organisation.setPhoneNumber("+1234567890");
+            organisation.setAddress("123 Example Street");
+            organisation.setVerified(true);
+            organisationRepository.save(organisation);
 
-//            Organisation org1 = new Organisation(
-//                    null,
-//                    "Charity Org 1",
-//                    "A charity organization for good causes.",
-//                    "contact@charityorg1.com",
-//                    "+123456789",
-//                    "123 Street, City, Country",
-//                    true
-//            );
-//            organisationRepository.save(org1);
-            organisationRepository.findAll().forEach(org -> {
-                System.out.println(org.toString());
-            });
+            // Initialize Don with Organisation ID
+           // Don donation = new Don();
+            //donation.setOrganisationId(organisation.getId()); // Use the ID of the created organisation
+            //donation.setTitle("Initial Donation");
+            //donation.setDescription("This donation is auto-created with an organisation.");
+            //donation.setMontantToAchieve(5000.0);
+            //donation.setCurrentAmount(0.0);
+            //donation.setAchieved(false);
+            //donRepository.save(donation);
+
+            //System.out.println("Initial Organisation created: " + organisation);
+            //System.out.println("Initial Don created: " + donation);
         };
-//    @Override
-//    public void run(String... args) throws Exception {
-//        Organisation org1 = new Organisation(null, "Organisation One", "Description for Organisation One", "contact1@example.com", "123-456-7890", "123 Example St", false);
-//        Organisation org2 = new Organisation(null, "Organisation Two", "Description for Organisation Two", "contact2@example.com", "987-654-3210", "456 Sample Ave", true);
-//        Organisation org3 = new Organisation(null, "Organisation Three", "Description for Organisation Three", "contact3@example.com", "555-555-5555", "789 Test Blvd", false);
-//
-//        // Save sample organisations to the database
-////        organisationRepository.save(org1);
-////        organisationRepository.save(org2);
-////        organisationRepository.save(org3);
-//
-//        // Print all organisations to the console
-//        organisationRepository.findAll().forEach(org -> {
-//            System.out.println(org.toString());
-//        });
-
     }
 }
